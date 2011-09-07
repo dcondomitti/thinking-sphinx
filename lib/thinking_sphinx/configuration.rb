@@ -136,6 +136,8 @@ module ThinkingSphinx
         RAILS_ENV
       elsif defined?(Sinatra)
         Sinatra::Application.environment.to_s
+      elsif defined?(Rack)
+        ENV['RACK_ENV']
       else
         ENV['RAILS_ENV'] || 'development'
       end
